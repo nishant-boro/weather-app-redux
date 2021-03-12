@@ -21,7 +21,6 @@ const HourlyWeatherCard = ({ data }) => (
             className="icon mx-auto"
             src={iconSrcGenerator(item.weather[0].icon)}
           />
-          <div>{console.log(item)}</div>
           <div className="font-weight-bold">
             {parseInt(item.main.temp_min)}&deg; &nbsp;
             <small>{parseInt(item.main.temp_max)}&deg;</small>

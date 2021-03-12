@@ -1,10 +1,8 @@
-import { setWeatherData } from "../actions/setWeatherData";
-
 const initialState = {
   weatherData: [],
 };
 
-function weatherData(state = initialState, action) {
+const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_WEATHER_DATA":
       return {
@@ -13,6 +11,6 @@ function weatherData(state = initialState, action) {
     default:
       return state;
   }
-}
+};
 
-export default weatherData;
+export default rootReducer;

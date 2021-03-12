@@ -31,7 +31,6 @@ class DailyWeather extends Component {
         return currArr.indexOf(item) === i;
       });
 
-    console.log(dates);
     let sortedResults = [];
     for (let theDate of dates) {
       sortedResults.push({
@@ -115,7 +114,7 @@ class DailyWeather extends Component {
         var idx = 0;
 
         if (res && res.length >= 1) {
-          for (let item of this.state.arrangedData) {
+          for (let item of this.props.weatherData) {
             const day = res[idx++];
 
             item.dailyWeatherData.min = day.temp.min;
@@ -195,7 +194,7 @@ class DailyWeather extends Component {
         <div className="container">
           {!this.state.loadingData &&
             this.props.weatherData &&
-            this.props.weatherData((data, idx) => {
+            this.props.weatherData.map((data, idx) => {
               return (
                 <DailyWeatherCard
                   forecast={data}
